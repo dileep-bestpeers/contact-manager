@@ -1,38 +1,174 @@
-.App {
+*
+{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+.header_styles{
+  border-bottom: 3px solid rgb(95, 131, 79);
+  border-radius: 50%;
   text-align: center;
+  position: relative;
+  padding:10px 0 30px 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.add_icon{
+  position: absolute;
+  left: 50%;bottom: 0px;
+  transform: translate(-50%, 0%);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add_icon i{
+  font-size: 22px;
+  color: rgb(32, 109, 2);
 }
+.add_icon small{
+  font-size:12px
+}
+.contact_box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgba(94, 182, 76, 0.5);
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  transition: all 0.4s ease-in-out;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+}
+.contact_box:hover{
+  background-color: rgba(94, 182, 76, 0.774);
+  box-shadow:1px 1px 7px 3px rgba(36, 36, 36, 0.582);
+  transform: translateY(-2px);
+}
+.contact_inner_left{
+  display: flex;
+  align-items: center;
+}
+.contact_inner_left .first_letter{
+  margin-right: 10px;
+  background-color: #fff;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  font-size:23px;
+}
+.contact_info{
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.contact_name{
+  font-weight: bold;
+  letter-spacing:1px
+}
+.all_contacts{
+  height: 63vh;
+  overflow-y: auto; 
+}
+.contactSearch , .all_contacts{
+  width: 60%;
+  margin: 0 auto;
+}
+
+
+ /* width */
+ .all_contacts::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+.all_contacts::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.all_contacts::-webkit-scrollbar-thumb {
+  background: rgb(111, 172, 88);
+}
+
+/* Handle on hover */
+.all_contacts::-webkit-scrollbar-thumb:hover {
+  background: rgb(74, 145, 48);
+} 
+
+.footer{
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 0;
+}
+.no_contacts{
+  width: 260px;
+  padding: 30px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform:translate(-50%,20%)
+}
+.delete_contact_box{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50vh;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.profile_img img{
+  width: 120px;
+  margin: 10px auto;
 }
 
-.App-link {
-  color: #61dafb;
+.NotFoundErrorPage{
+  width: 100%;
+  height: 80vh;
+}
+.NotFoundErrorPage img{
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.contactSearch{
+  color: rgb(19, 95, 0);
+  border: 1px solid rgba(124, 121, 121, 0.562);
+  position: relative;
+  border-radius:30px;
+  padding:5px 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-shadow: 1px 1px 7px 2px rgba(184, 221, 162, 0.726);
+}
+.contactSearch input{
+  border: 1px solid rgba(0, 0, 0, 0);
+  outline: none;
+  color: rgb(52, 87, 0);
+}
+
+
+@media screen and (max-width: 768px){
+  .contactSearch , .all_contacts{
+    width: 80%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 500px){
+  .contactSearch , .all_contacts{
+    width: 100%;
+  }
+  .contact_box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .contact_inner_left{
+    width: 100%;
+    display: flex;
+  }
+  .contact_btns{
+    width: 100%;
+    display: flex;
+    margin-top: 12px;
   }
 }
